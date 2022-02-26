@@ -5,13 +5,26 @@ grpc-java-course/.gradle
 .gradle
 .build/
 
-# Recurse .gitignore idea
+
+# Check .git
+grpc-java-course/gradle/
+grpc-java-course/.idea/
+grpc-java-course/build/
+
+# Recurse subdirectories .gitignore idea
+**/.idea/
 **/.idea/workspace.xml
 **/.idea/aws.xml
 **/.idea/checkstyle-idea.xml
 **/.idea/google-java-format.xml
 **/.idea/jarRepositories.xml
 **/.idea/misc.xml
+
+# Recurse subdirectories
+**/grpc-java-course/.gradle/
+**/grpc-java-course/.idea/
+**/grpc-java-course/build/
+
 
 # Recurse .gitignore gradle directory and subdirectories
 **/.gradle/
