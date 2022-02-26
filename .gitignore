@@ -5,6 +5,18 @@ grpc-java-course/.gradle
 .gradle
 .build/
 
+# Recurse .gitignore idea
+**/.idea/workspace.xml
+**/.idea/aws.xml
+**/.idea/checkstyle-idea.xml
+**/.idea/google-java-format.xml
+**/.idea/jarRepositories.xml
+**/.idea/misc.xml
+
+# Recurse .gitignore gradle directory and subdirectories
+**/.gradle/
+**/build/
+
 # Ignore Gradle GUI config
 gradle-app.setting
 
