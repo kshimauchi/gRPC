@@ -46,7 +46,8 @@ settings.gradle
 *.jar
 *.war
 *.ear
-*.bat
+.bat
+
 # Certificate Authority
 # OpenSSL-related files best not committed
 
