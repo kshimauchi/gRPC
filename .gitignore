@@ -1,21 +1,9 @@
-.gradle
-/build/
-
-# Ignore Gradle GUI config
-gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
-
-# Cache of project
-.gradletasknamecache
-
-# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
-# gradle/wrapper/gradle-wrapper.properties
-
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
-.gradle
+grpc-java-course/.gradle
 /build/
+.idea
+.gradle
+.build/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -40,6 +28,7 @@ gradle-app.setting
 *.jar
 *.war
 *.ear
+*.bat
 # Certificate Authority
 # OpenSSL-related files best not committed
 
