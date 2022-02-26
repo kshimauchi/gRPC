@@ -1,9 +1,10 @@
 # From https://github.com/github/gitignore/blob/master/Gradle.gitignore
-grpc-java-course/.gradle
+
 /build/
 *.idea
 *.gradle
 *.build/
+.gradle
 
 # Recurse ignores
 **/.idea/workspace.xml
@@ -15,6 +16,15 @@ grpc-java-course/.gradle
 
 # Ignore Gradle GUI config
 gradle-app.setting
+
+# Other
+build.gradle
+gradlew
+gradlew.bat
+settings.gradle
+
+
+
 
 
 # Cache of project
