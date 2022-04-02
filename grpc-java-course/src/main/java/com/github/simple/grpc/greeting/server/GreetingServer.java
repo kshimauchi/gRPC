@@ -13,7 +13,9 @@ public class GreetingServer {
     // Step 2: Build the Server
     // Step 3: Start the server
     // Step 4: await the server to close on block on main termination
-    Server server = ServerBuilder.forPort(50051).build();
+    Server server = ServerBuilder.forPort(50051)
+            .addService(new GreetServiceImpl())
+            .build();
 
     server.start();
 

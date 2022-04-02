@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package greet;
+
+option java_package = "com.proto.greet";
+option java_multiple_files = true;
+
+message Greeting {
+  string first_name = 1;
+  string last_name = 2;
+}
+
+message GreetRequest {
+  Greeting greeting = 1;
+}
+
+message GreetResponse {
+  string result = 1;
+}
+
+service GreetService {
+  //Unary
+  rpc Greet(GreetRequest) returns (GreetResponse){};
+}
+// useRequest method
+// useResponse method
+// name rpc Correctly an messages should be all good
+// Generate Proto, check build
