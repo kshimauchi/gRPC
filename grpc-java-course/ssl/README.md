@@ -15,11 +15,10 @@
 #### server.pem: Conversion of server.key into a format gRPC likes (this shouldn't be shared)
 
 #Summary
-#Private files: ca.key, server.key, server.pem, server.crt
-#"Share" files: ca.crt (needed by the client), server.csr (needed by the CA)
+#### Private files: ca.key, server.key, server.pem, server.crt
+#### "Share" files: ca.crt (needed by the client), server.csr (needed by the CA)
 
-# Changes these CN's to match your hosts in your environment if needed.
-# SERVER_ON=localhost
+### SERVER_CN=localhost
 
 ##### Setup for linux mac pass:1111 can be anything you like
 openssl genrsa -passout pass:1111 -de3 -out ca.key 4096

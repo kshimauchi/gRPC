@@ -7,6 +7,8 @@ plugins {
 group 'com.github.kshimauchi.gRPC'
 version '1.0-SNAPSHOT'
 
+sourceCompatibility = 1.8
+
 repositories {
     mavenCentral()
 }
@@ -29,6 +31,7 @@ dependencies {
     runtimeOnly 'io.grpc:grpc-netty-shaded:1.44.0'
     implementation 'io.grpc:grpc-protobuf:1.44.0'
     implementation 'io.grpc:grpc-stub:1.44.0'
+
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
@@ -41,7 +44,6 @@ idea {
         generatedSourceDirs += file('build/generated/source')
     }
 }
-
 test {
     useJUnitPlatform()
 }
