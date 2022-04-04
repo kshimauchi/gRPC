@@ -1,6 +1,5 @@
 package com.github.simple.grpc.greeting.client;
 
-import com.proto.dummy.DummyServiceGrpc;
 import com.proto.greet.GreetRequest;
 import com.proto.greet.GreetResponse;
 import com.proto.greet.GreetServiceGrpc;
