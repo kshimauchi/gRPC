@@ -3,7 +3,6 @@ package com.github.simple.grpc.calculator.client;
 import com.proto.calculator.CalculatorServiceGrpc;
 import com.proto.calculator.SumRequest;
 import com.proto.calculator.SumResponse;
-import com.proto.calculator.Calculator;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
