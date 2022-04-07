@@ -23,13 +23,18 @@ message GreetManyTimesRequest {
 message GreetManyTimesResponse {
   string result = 1;
 }
+message LongGreetRequest {
+  Greeting greeting = 1;
+}
+message LongGreetResponse {
+  string result = 1;
+}
+
 service GreetService {
   // Unary
   rpc Greet(GreetRequest) returns (GreetResponse){};
   // Server Streaming
   rpc GreetManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesResponse){};
+  // Client Streaming here we have flipped the stream
+  rpc LongGreet(stream LongGreetRequest) returns (LongGreetResponse){}
 }
-// useRequest method
-// useResponse method
-// name rpc Correctly an messages should be all good
-// Generate Proto, check build
