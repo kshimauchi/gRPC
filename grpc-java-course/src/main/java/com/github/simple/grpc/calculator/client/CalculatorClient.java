@@ -25,7 +25,7 @@ public class CalculatorClient {
 
         channel.shutdown();
     }
-    
+
     private void doUnaryCall(ManagedChannel channel){
         // Create the stub for the CalculatorServiceGrpc
         CalculatorServiceGrpc.CalculatorServiceBlockingStub stub = CalculatorServiceGrpc.newBlockingStub(channel);
@@ -68,33 +68,37 @@ public class CalculatorClient {
                 System.out.println("Received Response from server ");
                 System.out.println(value.getAverage());
             }
-
             @Override
             public void onError(Throwable t) {
 
             }
-
             @Override
             public void onCompleted() {
                 System.out.println("Server has completed sending us data");
                 latch.countDown();
             }
         });
+//
+//        requestObserver.onNext(ComputeAverageRequest.newBuilder()
+//                .setNumber(1)
+//                .build());
+//
+//        requestObserver.onNext(ComputeAverageRequest.newBuilder()
+//                .setNumber(2)
+//                .build());
+//        requestObserver.onNext(ComputeAverageRequest.newBuilder()
+//                .setNumber(3)
+//                .build());
+//        requestObserver.onNext(ComputeAverageRequest.newBuilder()
+//                .setNumber(4)
+//                .build());
+//        //expect the average 10 /4 = 2.5
 
-        requestObserver.onNext(ComputeAverageRequest.newBuilder()
-                .setNumber(1)
-                .build());
-
-        requestObserver.onNext(ComputeAverageRequest.newBuilder()
-                .setNumber(2)
-                .build());
-        requestObserver.onNext(ComputeAverageRequest.newBuilder()
-                .setNumber(3)
-                .build());
-        requestObserver.onNext(ComputeAverageRequest.newBuilder()
-                .setNumber(4)
-                .build());
-        //expect the average 10 /4 = 2.5
+        for(int i = 0; i < 9999; i++){
+            requestObserver.onNext(ComputeAverageRequest.newBuilder()
+                    .setNumber(i)
+                    .build());
+        }
         requestObserver.onCompleted();
 
         try {
