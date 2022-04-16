@@ -95,28 +95,32 @@ public class GreetingClient {
               }
             });
     // STREAMING M1
-    System.out.println("");
+    System.out.println("Sending message 1");
     requestObserver.onNext(LongGreetRequest.newBuilder()
             .setGreeting(Greeting.newBuilder()
                     .setFirstName("Ken")
                     .build())
             .build());
     // STREAMING M2
+    System.out.println("Sending message 2");
     requestObserver.onNext(LongGreetRequest.newBuilder()
             .setGreeting(Greeting.newBuilder()
                     .setFirstName("John")
                     .build())
             .build());
     // STREAMING M3
+    System.out.println("Sending message 3");
     requestObserver.onNext(LongGreetRequest.newBuilder()
             .setGreeting(Greeting.newBuilder()
                     .setFirstName("Marc")
                     .build())
             .build());
-    // CALL ONCOMPLETED
+    // await the response an need to call onComplete because on complete
+    // we notify the server that the client is done sending data
     requestObserver.onCompleted();
 
     // TRY CATCH FOR THE LATCH
+    // allows the server to response using a block
     try{
       latch.await(3L, TimeUnit.SECONDS);
 
@@ -124,6 +128,8 @@ public class GreetingClient {
       e.printStackTrace();
     }
   }
+
+
   public static void main(String[] args) {
     System.out.println("Hello I am a grpc client");
 
